@@ -4,8 +4,8 @@ app = express();
 
 app.use(express.static("./public"));
 
-app.get("/ok", (req, res) => {
-    res.json({ hello: 'ok' });
+app.get('/ok', (req, res) => {
+    res.send('goodboi');
 });
 
 app.listen(PORT, () => {
