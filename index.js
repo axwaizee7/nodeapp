@@ -1,4 +1,5 @@
-const express = require("express");
+const express = require('express');
+const path = require('path');
 const PORT = 3000;
 app = express();
 
@@ -7,6 +8,10 @@ app.use(express.static("./public"));
 app.get('/ok', (req, res) => {
     res.send('goodboi');
 });
+
+app.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname + './public/index.html'))
+})
 
 app.listen(PORT, () => {
     const date = new Date();
