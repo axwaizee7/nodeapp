@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const PORT = 3000;
-app = express();
+const app = express();
 
 app.use(express.static("./public"));
 
@@ -10,7 +10,7 @@ app.get('/ok', (req, res) => {
 });
 
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname + '.\public\index.html'));
+    res.render('index');
 })
 
 app.listen(PORT, () => {
