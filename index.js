@@ -3,14 +3,14 @@ const path = require('path');
 const PORT = 3000;
 const app = express();
 
-app.use(express.static("./public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/ok', (req, res) => {
     res.send('goodboi');
 });
 
 app.get('/', (req, res)=>{
-    res.render('index');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 app.listen(PORT, () => {
